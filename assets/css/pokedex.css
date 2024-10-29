@@ -1,0 +1,439 @@
+.pokemons { 
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-bottom: 10rem;
+}
+
+
+.normal {
+    background-color: #a6a877;
+}
+
+.grass {
+    background-color: #77c850;
+}
+
+.fire {
+    background-color: #ee7f30;
+}
+
+.water {
+    background-color: #678fee;
+}
+
+.electric {
+    background-color: #f7cf2e;
+}
+
+.ice {
+    background-color: #98d5d7;
+}
+
+.ground {
+    background-color: #dfbf69;
+}
+
+.flying {
+    background-color: #a98ff0;
+}
+
+.poison {
+    background-color: #a040a0;
+}
+
+.fighting {
+    background-color: #bf3029;
+}
+
+.psychic {
+    background-color: #f65687;
+}
+
+.dark {
+    background-color: #725847;
+}
+
+.rock {
+    background-color: #b8a137;
+}
+
+.bug {
+    background-color: #a8b720;
+}
+
+.ghost {
+    background-color: #6e5896;
+}
+
+.steel {
+    background-color: #b9b7cf;
+}
+
+.dragon {
+    background-color: #6f38f6;
+}
+
+.fairy {
+    background-color: #f9aec7;
+}
+
+.pokedex-logo {
+    width: 300px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+    margin-top: 0.5rem;
+}
+
+.title p {
+    font-size: 1rem;
+    color: #3a84c9;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    margin: .2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+   
+}
+
+.pokemon .number {
+    color: #000;
+    opacity: .3;
+    text-align: right;
+    font-size: .625rem;
+}
+
+.pokemon .name {
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: .2rem;
+}
+
+.pokemon .detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pokemon .detail .types {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.pokemon .detail .types .type {
+    color: #fff;
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: .625rem;
+    border-radius: 1rem;
+    filter: brightness(1.1);
+    text-align: center;
+}
+
+.pokemon .detail img {
+    max-width: 100%;
+    height: 70px;
+    width: 70px;
+}
+
+/* Estilo do botão Detalhes */
+.details-button {
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: .625rem;
+    color: #fff;
+    background-color: #77787a81;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    margin-top: 0.5rem; 
+    align-self: flex-end; 
+}
+
+/* Efeito ao passar o mouse */
+.details-button:hover {
+    background-color: #828492de; 
+}
+
+.button-container {
+    display: flex; 
+    justify-content: center; 
+    margin-top: 10px; 
+}
+
+
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    z-index: 10;
+    padding: 5px;
+    margin: 0;
+    background-color: #21619c;
+    color: #fff;
+    font-size: .8rem;
+}
+
+.pagination button {
+    padding: 0.5rem;
+    margin: 0 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #3a84c9;
+    color: white;
+    cursor: pointer;
+    
+}
+
+.pagination button:hover {
+    background-color: #678fee;
+}
+
+
+
+/* Estilo do modal */
+#pokemon-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-image: url('https://i.pinimg.com/474x/a9/1c/f1/a91cf1f65eeb9c552ff1167d85eadf4d.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px; 
+    height: 400px; 
+    text-align: center; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    color: white;
+    position: relative; 
+    border: 3px solid white; 
+}
+
+/* Imagem do Pokémon no modal */
+#pokemon-image {
+    width: 100%; 
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 10px; 
+}
+
+/* Estilo do botão de fechar */
+.close {
+    cursor: pointer; 
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    font-size: 1.5rem; 
+    color: white; 
+    z-index: 1001; 
+    background-color: #678fee00;
+    border: none;
+}
+
+.search-container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin: 0;
+}
+
+.search-container h1 {
+    margin: 0;
+}
+
+#searchInput {
+    width: 200px; 
+    padding: 0.5rem; 
+    border: 1px solid #3a84c9; 
+    border-radius: 0.5rem;
+    font-size: 1rem; 
+}
+
+#searchButton, #clearSearchButton {
+    padding: 0.5rem; 
+    background-color: #3a84c9; 
+    border: none; 
+    border-radius: 0.5rem; 
+    color: white;
+    cursor: pointer; 
+    flex: 1; 
+    margin-left: 10px; 
+    text-align: center; 
+    width: 100px;
+}
+
+/* Estiliza o rodapé da página */
+footer {
+    background-color: #3a84c9d0; /* Cor de fundo do rodapé */
+    color: #535353ea; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 0; /* Espaçamento interno */
+    width: 100%; /* Largura total */
+    position: fixed; /* Mantém o rodapé fixo na parte inferior */
+    bottom: 0; /* Posiciona na parte inferior da página */
+    left: 0; /* Alinha à esquerda */
+    font-size: 1rem; /* Tamanho da fonte */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
+}
+
+/* Estiliza o parágrafo dentro do rodapé */
+footer p {
+    margin-top: 10px; /* Margem superior */
+    font-size: 15px; /* Tamanho da fonte */
+    color: #f5f7f8; /* Cor do texto */
+
+}
+
+/* Estiliza o conteúdo do rodapé */
+.footer-content {
+    display: flex; /* Usa flexbox para organizar o conteúdo */
+    justify-content: space-between; /* Espaça o conteúdo igualmente */
+    align-items: center; /* Alinha os itens verticalmente */
+    width: 90%; /* Largura do conteúdo do rodapé */
+    margin: 5px; /* Centraliza o conteúdo */
+}
+
+/* Estiliza os parágrafos dentro do conteúdo do rodapé */
+.footer-content p {
+    margin: 0; /* Remove a margem padrão */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Estiliza os ícones sociais dentro do rodapé */
+.social {
+    display: flex; /* Usa flexbox para organizar os ícones */
+    gap: 1rem; /* Espaço entre os ícones */
+    color: #f5f7f8; /* Cor dos ícones sociais */
+}
+
+/* Estiliza as imagens dos ícones sociais */
+.social a img {
+    width: 25px; /* Largura dos ícones */
+    height: 25px; /* Altura dos ícones */
+}
+
+
+
+
+/* Estilos responsivos */
+@media screen and (min-width: 380px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr;
+    }
+    .search-container {
+        align-items: stretch;
+    }
+
+    .search-container h1 {
+        width: 100%; 
+        text-align: center; 
+        margin-bottom: 10px; 
+    }
+
+    .search-container input {
+        width: 100%;
+        margin-bottom: 10px; 
+    }
+
+    .search-container button {
+        width: 100%;
+        margin-bottom: 10px; 
+    }
+
+}
+
+@media screen and (min-width: 640px) {
+    .pokemons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .search-container {
+        align-items: stretch; 
+    }
+
+    .search-container h1 {
+        width: 100%; 
+        text-align: center; 
+        margin-bottom: 10px; 
+    }
+
+    .search-container input {
+        width: 100%;
+        margin-bottom: 10px; 
+    }
+
+    .search-container button {
+        width: 100%;
+        margin-bottom: 10px; 
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+   
+
+    .pokemons {
+        grid-template-columns: repeat(4, 1fr);
+       
+    }
+
+    
+    .search-container {
+        align-items: stretch; 
+    }
+
+    .search-container h1 {
+        width: 100%;
+        text-align: center; 
+        margin-bottom: 10px;
+    }
+
+    .search-container input {
+        width: 100%; 
+        margin-bottom: 10px;
+    }
+
+    .search-container button {
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .pokemons {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+
+    <link rel="icon" href="assets/images/favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/pokedex.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="content">
+        <section class="search-container">
+            <header class="title">
+                <img src="https://pokedex-leojuriolli.vercel.app/static/media/logo.2b9a0803c9edf29ac1a17fe830ac7815.svg" 
+                     alt="Pokedex Logo" class="pokedex-logo">
+                <h1>1ª Geração</h1>
+            </header>
+            <div>
+                <input type="text" id="searchInput" placeholder="Pesquisar Pokémon..." class="search-input" aria-label="Pesquisar Pokémon">
+                <button id="searchButton" class="search-button">Pesquisar</button>
+                <button id="clearSearchButton" class="clear-button">Limpar</button>
+            </div>
+        </section>
+
+        <ol id="pokemonList" class="pokemons" role="list">
+            <!-- ..... Pokemons here ..... -->
+        </ol>  
+
+       
+    </main>
+
+    <footer>
+        <nav class="pagination" aria-label="Navegação de Páginas">
+            <div id="navigation">
+                <button id="previousButton" aria-label="Página Anterior">◀</button>
+                <span id="pageInfo">Pág 1 de 1</span>
+                <button id="nextButton" aria-label="Próxima Página">▶</button>
+            </div>
+        </nav>
+        <div class="footer-content">
+            <p>&copy; 2024. KM Todos os direitos reservados.</p>
+            <div class="social">
+                <span>Made with 🤍</span>
+                <a href="https://www.instagram.com/karinamartins_eu/" target="_blank" aria-label="Instagram de Karina Martins">
+                    <img src="assets/images/instagram.svg" alt="Ícone do Instagram de Karina Martins">
+                </a>
+                <a href="https://www.linkedin.com/in/karinacmartins/" target="_blank" aria-label="LinkedIn de Karina Martins">
+                    <img src="assets/images/linkedin.svg" alt="Ícone do LinkedIn de Karina Martins">
+                </a>
+                <a href="https://github.com/karinacmartins" target="_blank" aria-label="GitHub de Karina Martins">
+                    <img src="assets/images/github.svg" alt="Ícone do GitHub de Karina Martins">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <aside id="pokemon-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="close" aria-label="Fechar Modal">&times;</button>
+            <h2 id="pokemon-name"></h2>
+            <img id="pokemon-image" src="" alt="Imagem do Pokémon" />
+            <p><strong>Altura:</strong> <span id="pokemon-height"></span></p>
+            <p><strong>Peso:</strong> <span id="pokemon-weight"></span></p>
+            <p><strong>Habilidades:</strong> <span id="pokemon-abilities"></span></p>
+        </div>
+    </aside>
+
+    <script src="/assets/js/pokemon-model.js"></script>
+    <script src="/assets/js/poke-api.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
